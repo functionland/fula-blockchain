@@ -1,0 +1,28 @@
+[package]
+name = "fula_l3"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+subxt = { git = "https://github.com/paritytech/subxt" }
+async-std = { version = "1.9.0", features = ["attributes", "tokio1"] }
+scale = { package = "parity-scale-codec", version = "3", default-features = false, features = ["derive"] }
+sp-keyring = "6.0.0"
+env_logger = "0.9.0"
+log = "0.4.16"
+thiserror = "1.0.30"
+envconfig = "0.10.0"
+dotenv = "0.15.0"
+futures = { version = "0.3.13", default-features = false }
+hex = { version = "0.4.3", default-features = false }
+serde_json = { version = "1.0.79" }
+
+[features]
+# these features for now are used to determine which keyring to load.
+# potentially could be turned into smth useful
+# TODO: track subxt releases and determine, if no-std mode is availible for the service
+ed25519 = []
+sr25519 = []
+ecdsa = []

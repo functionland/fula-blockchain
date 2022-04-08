@@ -1,0 +1,28 @@
+{
+  "name": "tests",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=14.x"
+  },
+  "dependencies": {
+    "@redspot/chai": "0.13.6",
+    "@redspot/patract": "0.13.6",
+    "@types/chai": "^4.2.14",
+    "@types/mocha": "^8.0.3",
+    "chai": "^4.2.0",
+    "dotenv": "^16.0.0",
+    "redspot": "0.13.6",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.2"
+  },
+  "module": "true",
+  "scripts": {
+    "build": "yarn redspot compile --release",
+    "test": "yarn redspot test --no-compile",
+    "deploy": "yarn redspot run scripts/deploy.ts --no-compile"
+  },
+  "devDependencies": {
+    "@ethersproject/bignumber": "^5.6.0"
+  }
+}
